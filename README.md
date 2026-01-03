@@ -7,7 +7,7 @@ This is the official personal portfolio website for **Alankar Janawalekar**, a C
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
 
 ## Live Demo
-**[Click here to view the Portfolio](https://luciferjan.github.io/portfolio/)**
+**[Click here to view the Portfolio](https://luciferjan.github.io/alankar-portfolio/)**
 *(Note: Link will be active once GitHub Pages is enabled)*
 
 ## Tech Stack

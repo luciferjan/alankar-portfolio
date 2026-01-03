@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alankar Janawalekar | Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#020000',      
+                        card: '#0a0000',      
+                        primary: '#D00000',   
+                        glow: '#ff1a1a',      
+                        accent: '#ff4d4d'     
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@700&display=swap');
+        
+        body { background-color: #020000; color: #e5e5e5; overflow-x: hidden; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020000; }
+        ::-webkit-scrollbar-thumb { background: #330000; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D00000; }
+
+        /* Effects */
+        .glow-text { text-shadow: 0 0 30px rgba(208, 0, 0, 0.6); }
+        .glass-card {
+            background: rgba(10, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 0, 0, 0.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(208, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(208, 0, 0, 0.2);
+        }
+        
+        /* Floating Animation */
+        @keyframes float { 
+            0% { transform: translateY(0px); } 
+            50% { transform: translateY(-15px); } 
+            100% { transform: translateY(0px); } 
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+
+        @keyframes pulse-core { 
+            0% { opacity: 0.6; transform: scale(1); } 
+            50% { opacity: 1; transform: scale(1.1); } 
+            100% { opacity: 0.6; transform: scale(1); } 
+        }
+        .core-pulse { animation: pulse-core 3s infinite; }
+
+        @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #cursor-glow {
+            position: fixed; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(208,0,0,0.1) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); z-index: 0; mix-blend-mode: screen;
+        }
+    </style>
+</head>
+<body class="font-sans selection:bg-primary selection:text-white">
+
+    <div id="cursor-glow"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-5 flex justify-between items-center bg-dark/80 backdrop-blur-md border-b border-white/5">
+        <div class="text-xl font-bold tracking-tighter">Personal <span class="text-primary">Portfolio</span></div>
+        <div class="flex gap-6 items-center">
+            <a href="#skills" class="hidden md:block text-sm text-gray-400 hover:text-primary transition-colors">Skills</a>
+            <a href="#experience" class="hidden md:block text-sm text-gray-400 hover:text-primary transition-colors">Experience</a>
+            <a href="#education" class="hidden md:block text-sm text-gray-400 hover:text-primary transition-colors">Education</a>
+            <a href="#certifications" class="hidden md:block text-sm text-gray-400 hover:text-primary transition-colors">Certifications</a>
+            <a href="#work" class="hidden md:block text-sm text-gray-400 hover:text-primary transition-colors">Projects</a>
+            <a href="#contact" class="px-5 py-2 bg-primary/10 border border-primary/50 text-primary rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all shadow-[0_0_15px_rgba(208,0,0,0.3)]">Let's Talk</a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-20 z-10 overflow-hidden">
+        
+        <div class="md:w-1/2 z-20 mt-10 md:mt-0">
+            <div class="animate-hero inline-block px-3 py-1 mb-6 border border-primary/30 rounded-full bg-primary/5 text-primary text-xs font-mono tracking-widest uppercase">
+                <i class="ri-circle-fill text-[8px] animate-pulse mr-2"></i>Open to Opportunities
+            </div>
+            
+            <h1 class="animate-hero text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-6">
+                FROM <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent glow-text">VISION</span> <br>
+                TO EXECUTION.
+            </h1>
+            
+            <div class="animate-hero mb-8 border-l-2 border-primary pl-6">
+                <p class="text-white text-2xl font-bold mb-2">Hey, I am Alankar Janawalekar</p>
+                <p class="text-gray-400 font-mono text-sm leading-relaxed">
+                    Computer Science Student <br> 
+                    Web Dev · IoT · Python Development <br> 
+                    Graphic Designer · Cinematography
+                </p>
+            </div>
+
+            <div class="animate-hero flex flex-wrap gap-4">
+                <a href="#experience" class="px-8 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 hover:scale-105 transition-all">Explore Journey</a>
+                <a href="https://github.com/luciferjan" target="_blank" class="px-8 py-3 border border-white/20 rounded-lg hover:border-primary hover:text-primary transition-all flex items-center gap-2">
+                    <i class="ri-github-fill text-xl"></i> GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 h-[600px] flex items-center justify-center relative z-10 float-anim">
+            <div class="absolute w-[500px] h-[500px] bg-primary rounded-full blur-[130px] opacity-10"></div>
+            
+            <svg width="600" height="600" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-[0_0_40px_rgba(208,0,0,0.4)]">
+                <defs>
+                    <linearGradient id="cubeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D00000;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#020000;stop-opacity:0.9" />
+                    </linearGradient>
+                </defs>
+
+                <g transform="translate(250, 250)">
+                     <circle r="35" fill="#D00000" opacity="0.4" class="core-pulse" />
+                     <circle r="15" fill="#fff" />
+                     <g stroke="#D00000" stroke-width="2" fill="url(#cubeGrad)" stroke-linejoin="round">
+                        <path d="M0 -60 L50 -30 L0 0 L-50 -30 Z" opacity="0.8"/>
+                        <path d="M50 -30 L50 40 L0 70 L0 0 Z" opacity="0.6"/>
+                        <path d="M0 0 L0 70 L-50 40 L-50 -30 Z" opacity="0.6"/>
+                     </g>
+                </g>
+
+                <g transform="translate(100, 150)">
+                    <rect x="-25" y="-25" width="50" height="50" rx="10" fill="#001e36" stroke="#31A8FF" stroke-width="2">
+                        <animate attributeName="y" values="-25;-35;-25" duration="4s" repeatCount="indefinite" />
+                    </rect>
+                    <text x="0" y="8" text-anchor="middle" fill="#31A8FF" font-family="JetBrains Mono" font-weight="bold" font-size="24">
+                        Ps
+                        <animate attributeName="y" values="8;-2;8" duration="4s" repeatCount="indefinite" />
+                    </text>
+                    <line x1="15" y1="15" x2="100" y2="60" stroke="#31A8FF" stroke-width="1" stroke-dasharray="4" opacity="0.3" />
+                </g>
+
+                <g transform="translate(400, 120)">
+                    <rect x="-25" y="-25" width="50" height="50" rx="10" fill="#20002e" stroke="#D8A0FF" stroke-width="2">
+                        <animate attributeName="y" values="-25;-15;-25" duration="5s" repeatCount="indefinite" />
+                    </rect>
+                    <text x="0" y="8" text-anchor="middle" fill="#D8A0FF" font-family="JetBrains Mono" font-weight="bold" font-size="24">
+                        Pr
+                        <animate attributeName="y" values="8;18;8" duration="5s" repeatCount="indefinite" />
+                    </text>
+                    <line x1="-15" y1="15" x2="-100" y2="80" stroke="#D8A0FF" stroke-width="1" stroke-dasharray="4" opacity="0.3" />
+                </g>
+
+                <g transform="translate(120, 380)">
+                    <g>
+                        <animate attributeName="transform" values="translate(0,-5); translate(0,5); translate(0,-5)" duration="6s" repeatCount="indefinite" />
+                        <rect x="-30" y="-30" width="60" height="60" rx="12" fill="#0F1E29" stroke="#FFD43B" stroke-width="2" />
+                        <text x="0" y="10" text-anchor="middle" fill="#FFD43B" font-family="JetBrains Mono" font-weight="bold" font-size="28">Py</text>
+                    </g>
+                    <line x1="20" y1="-20" x2="90" y2="-90" stroke="#FFD43B" stroke-width="1" stroke-dasharray="4" opacity="0.3" />
+                </g>
+
+                <g transform="translate(380, 350)">
+                     <g>
+                        <animate attributeName="transform" values="translate(0,-5); translate(0,5); translate(0,-5)" duration="4.5s" repeatCount="indefinite" />
+                        <rect x="-35" y="-25" width="70" height="50" rx="10" fill="#2E1010" stroke="#E34F26" stroke-width="2" />
+                        <text x="0" y="8" text-anchor="middle" fill="#E34F26" font-family="JetBrains Mono" font-weight="bold" font-size="20">HTML</text>
+                     </g>
+                     <line x1="-20" y1="-20" x2="-80" y2="-70" stroke="#E34F26" stroke-width="1" stroke-dasharray="4" opacity="0.3" />
+                </g>
+
+                <g transform="translate(420, 240)">
+                     <g>
+                        <animate attributeName="transform" values="translate(0,-5); translate(0,5); translate(0,-5)" duration="5.5s" repeatCount="indefinite" />
+                        <rect x="-30" y="-25" width="60" height="50" rx="10" fill="#0C1A2B" stroke="#1572B6" stroke-width="2" />
+                        <text x="0" y="8" text-anchor="middle" fill="#1572B6" font-family="JetBrains Mono" font-weight="bold" font-size="20">CSS</text>
+                     </g>
+                </g>
+
+                <g transform="translate(80, 250)">
+                    <rect x="-20" y="-20" width="40" height="40" rx="8" fill="#330000" stroke="#FF9A00" stroke-width="2">
+                        <animate attributeName="y" values="-20;-10;-20" duration="6s" repeatCount="indefinite" />
+                    </rect>
+                    <text x="0" y="6" text-anchor="middle" fill="#FF9A00" font-family="JetBrains Mono" font-weight="bold" font-size="18">
+                        Ai
+                        <animate attributeName="y" values="6;16;6" duration="6s" repeatCount="indefinite" />
+                    </text>
+                </g>
+                
+                <g transform="translate(250, 120)">
+                    <g>
+                         <animate attributeName="transform" values="translate(0,0); translate(0,-10); translate(0,0)" duration="3s" repeatCount="indefinite" />
+                         <ellipse rx="20" ry="8" stroke="#61DAFB" stroke-width="1" fill="none" transform="rotate(0)"/>
+                         <ellipse rx="20" ry="8" stroke="#61DAFB" stroke-width="1" fill="none" transform="rotate(60)"/>
+                         <ellipse rx="20" ry="8" stroke="#61DAFB" stroke-width="1" fill="none" transform="rotate(120)"/>
+                         <circle r="3" fill="#61DAFB"/>
+                    </g>
+                </g>
+
+            </svg>
+        </div>
+    </header>
+
+    <section id="skills" class="py-24 px-6 relative z-10 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">
+            Technical <span class="text-primary">Arsenal</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="reveal glass-card p-6 rounded-2xl hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-500">
+                    <i class="ri-code-s-slash-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Development</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Python</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Django</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">React.js</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">PHP</span>
+                </div>
+            </div>
+            <div class="reveal glass-card p-6 rounded-2xl hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 text-yellow-500">
+                    <i class="ri-cpu-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">IoT & Robotics</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">IoT Systems</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Robotics</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">3D Printing</span>
+                </div>
+            </div>
+            <div class="reveal glass-card p-6 rounded-2xl hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-500">
+                    <i class="ri-pen-nib-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Creative</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Photoshop</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Illustrator</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Premiere Pro</span>
+                </div>
+            </div>
+            <div class="reveal glass-card p-6 rounded-2xl hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-500">
+                    <i class="ri-terminal-box-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Tools & Sec</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Git & GitHub</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Kali Linux</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Nmap</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 relative z-10 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 flex items-center gap-4">
+            <span class="w-2 h-12 bg-primary block"></span>
+            Professional <span class="text-primary">Chronicle</span>
+        </h2>
+
+        <div class="relative border-l border-white/10 ml-4 md:ml-10 space-y-16">
+            <div class="reveal relative pl-10 md:pl-16">
+                <div class="absolute -left-[9px] top-0 w-5 h-5 bg-black border-2 border-primary rounded-full shadow-[0_0_15px_#D00000]"></div>
+                <div class="glass-card p-8 rounded-2xl group cursor-default transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">Intern (IoT, AIoT & Robotics)</h3>
+                            <div class="text-primary font-mono text-sm mt-1">Grok Learning Pvt Ltd • Mumbai</div>
+                        </div>
+                        <div class="mt-2 md:mt-0 text-xs font-bold bg-primary/20 text-primary px-3 py-1 rounded border border-primary/30">Dec 2025 - Present</div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Designing and implementing sensor-based systems, embedded control, and automation workflows</p>
+                    <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">IoT & AIoT</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Robotics</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">3D printing</span>
+                </div>
+                </div>
+            </div>
+
+            <div class="reveal relative pl-10 md:pl-16">
+                <div class="absolute -left-[9px] top-0 w-5 h-5 bg-black border-2 border-gray-600 rounded-full group-hover:border-primary transition-colors"></div>
+                <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Junior Graphic Designer</h3>
+                        <div class="text-xs text-gray-500 font-mono">Feb 2024 - Jan 2025</div>
+                    </div>
+                    <div class="text-gray-500 text-sm mb-4">BondFire Groups • Mumbai</div>
+                    <p class="text-gray-400 text-sm">Designed social and digitals content for client campaigns and collaborated with the tech team on UI mockups.</p>
+                    <br>
+                <div class="flex flex-wrap gap-2">
+                        <br>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Adobe Photoshop</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Adobe Illustrator</span>
+                    <span class="text-xs px-2 py-1 bg-white/5 rounded border border-white/10">Adobe Premiere Pro</span>
+                </div>
+            </div>
+
+    </section>
+
+    <section id="education" class="py-24 px-6 relative z-10 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 flex items-center gap-4 justify-end text-right">
+            Academic <span class="text-primary">Background</span>
+            <span class="w-2 h-12 bg-primary block"></span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="reveal glass-card p-8 rounded-2xl md:col-span-2 border-l-4 border-l-primary">
+                <div class="text-xs text-primary font-mono mb-2">EXPECTED GRADUATION: 2026-27</div>
+                <h3 class="text-2xl font-bold text-white mb-2">B.Sc. in Computer Science</h3>
+                <p class="text-gray-400">SIES College of Arts, Science & Commerce, Sion (W), Mumbai</p>
+                <div class="mt-4 flex gap-2"><span class="px-2 py-1 bg-white/5 text-xs rounded">Major Project: Trackivore</span></div>
+            </div>
+            <div class="reveal glass-card p-8 rounded-2xl hover:bg-white/5 transition-all">
+                <h3 class="text-xl font-bold text-white mb-2">HSC (Higher Secondary)</h3>
+                <p class="text-gray-400 text-sm">SIES College of Arts, Science & Commerce, Sion (W)</p>
+            </div>
+            <div class="reveal glass-card p-8 rounded-2xl hover:bg-white/5 transition-all">
+                <h3 class="text-xl font-bold text-white mb-2">SSC (Secondary School)</h3>
+                <p class="text-gray-400 text-sm">D.S. High School, Sion</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-24 px-6 relative z-10 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">
+            Certified <span class="text-primary">Expertise</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="reveal glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-transform duration-500">
+                <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <i class="ri-router-line text-3xl text-gray-300 group-hover:text-primary"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Networking Basics</h3>
+                <p class="text-xs text-gray-500 font-mono mb-4">Cisco Academy</p>
+                <span class="inline-block px-3 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold tracking-widest uppercase rounded-full border border-green-500/20">
+                    Verified
+                </span>
+            </div>
+
+            <div class="reveal glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 blur-xl rounded-full"></div>
+                <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <i class="ri-skull-line text-3xl text-gray-300 group-hover:text-primary"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Ethical Hacker</h3>
+                <p class="text-xs text-gray-500 font-mono mb-4">Cisco Academy</p>
+                <div class="flex items-center gap-2">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    <span class="text-[10px] text-primary font-bold tracking-widest uppercase">In Progress</span>
+                </div>
+            </div>
+
+            <div class="reveal glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-transform duration-500">
+                <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <i class="ri-sensor-line text-3xl text-gray-300 group-hover:text-primary"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Internet of Things</h3>
+                <p class="text-xs text-gray-500 font-mono mb-4">Grok Learning</p>
+                <span class="inline-block px-3 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold tracking-widest uppercase rounded-full border border-green-500/20">
+                    Verified
+                </span>
+            </div>
+
+            <div class="reveal glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-blue-500/10 blur-xl rounded-full"></div>
+                <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                    <i class="ri-cloud-line text-3xl text-gray-300 group-hover:text-blue-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Cloud Engineering</h3>
+                <p class="text-xs text-gray-500 font-mono mb-4">Google Cloud</p>
+                <div class="flex items-center gap-2">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    <span class="text-[10px] text-blue-500 font-bold tracking-widest uppercase">In Progress</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="work" class="py-24 px-6 relative z-10 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">Featured <span class="text-primary">Project</span></h2>
+        <div class="reveal group relative w-full border border-white/10 rounded-3xl overflow-hidden bg-[#050000]">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="flex flex-col md:flex-row min-h-[400px]">
+                <div class="md:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
+                    <div class="text-primary font-mono text-xs tracking-widest mb-4">FULL STACK DEVELOPMENT</div>
+                    <h3 class="text-4xl font-bold text-white mb-4">Trackivore</h3>
+                    <div class="text-primary font-mono text-sm mb-4">College Major Project</div>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Developed a web-based health and fitness tracking application tailored to Indian dietary patterns, 
+                        featuring user authentication, personalized dashboards, and meal logging.</p>
+                    <div class="flex gap-4 text-xs font-mono text-gray-500 mb-8 flex-wrap">
+                        <span class="border-b border-primary/50 text-gray-300 pb-1">PHP</span>
+                        <span class="border-b border-primary/50 text-gray-300 pb-1">MySQL</span>
+                        <span class="border-b border-primary/50 text-gray-300 pb-1">JavaScript</span>
+                        <span class="border-b border-primary/50 text-gray-300 pb-1">HTML5</span>
+                        <span class="border-b border-primary/50 text-gray-300 pb-1">CSS3</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-[#0a0000] relative overflow-hidden flex items-center justify-center">
+                    <div class="relative w-64 h-[80%] bg-[#111] border border-white/10 rounded-2xl p-4 shadow-2xl transform group-hover:scale-105 group-hover:-rotate-2 transition-all duration-700">
+                        <div class="w-full h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-lg mb-4 border border-white/5"></div>
+                        <div class="space-y-3">
+                            <div class="w-3/4 h-3 bg-white/10 rounded animate-pulse"></div>
+                            <div class="w-1/2 h-3 bg-white/10 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="relative pt-24 pb-12 px-6 bg-[#030000] border-t border-white/5">
+        <div class="max-w-6xl mx-auto mb-20">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-16">READY TO <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600">COLLABORATE?</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="tel:+919152730741" class="glass-card p-8 rounded-xl text-center hover:bg-primary/10 transition-all group">
+                    <i class="ri-phone-fill text-3xl text-gray-500 group-hover:text-primary mb-4 block transition-colors"></i>
+                    <h3 class="font-bold text-white mb-1">Call Me</h3>
+                    <p class="text-sm text-gray-400">+91 9152730741</p>
+                </a>
+                <a href="mailto:alankarjan123@gmail.com" class="glass-card p-8 rounded-xl text-center hover:bg-primary/10 transition-all group">
+                    <i class="ri-mail-send-fill text-3xl text-gray-500 group-hover:text-primary mb-4 block transition-colors"></i>
+                    <h3 class="font-bold text-white mb-1">Email</h3>
+                    <p class="text-sm text-gray-400">alankarjan123@gmail.com</p>
+                </a>
+                <a href="https://wa.me/919152730741" target="_blank" class="glass-card p-8 rounded-xl text-center hover:bg-primary/10 transition-all group">
+                    <i class="ri-whatsapp-fill text-3xl text-gray-500 group-hover:text-green-500 mb-4 block transition-colors"></i>
+                    <h3 class="font-bold text-white mb-1">WhatsApp</h3>
+                    <p class="text-sm text-gray-400">Chat Instantly</p>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-bold tracking-tighter">Personal <span class="text-primary">Portfolio</span></div>
+            <div class="flex gap-6">
+                <a href="https://linkedin.com/in/alankar-jan" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black hover:scale-110 transition-all"><i class="ri-linkedin-fill"></i></a>
+                <a href="https://github.com/luciferjan" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black hover:scale-110 transition-all"><i class="ri-github-fill"></i></a>
+                <a href="https://www.instagram.com/alankar.jan" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black hover:scale-110 transition-all"><i class="ri-instagram-fill"></i></a>
+            </div>
+            <div class="text-xs text-gray-600 font-mono">&copy; 2026 Alankar Janawalekar. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const cursor = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => { gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.5, ease: "power2.out" }); });
+        gsap.from(".animate-hero", { y: 50, opacity: 0, duration: 1.2, stagger: 0.15, ease: "power3.out" });
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.from(element, { scrollTrigger: { trigger: element, start: "top 85%", toggleActions: "play none none reverse" }, y: 50, opacity: 0, duration: 0.8, ease: "power3.out" });
+        });
+    </script>
+</body>
+</html>
